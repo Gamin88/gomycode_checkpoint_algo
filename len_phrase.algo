@@ -1,0 +1,30 @@
+ALGORITHM len_phrase
+VAR
+    phrase:STRING;
+    i:INTEGER:=0;
+    nbr_mots, nbr_voyel, nbr_caract:INTEGER;
+    prec:INTEGER;
+
+BEGIN
+    nbr_mots:=0;
+    nbr_voyel:=0;
+    nbr_caract:=0;
+    WRITE("Ecrire une phrase:");
+    READ(phrase);
+    FOR i FROM len(phrase[i]) TO max STEP step  DO
+        IF (phrase[i]:=" ") THEN
+            nbr_caract := nbr_caract + 1;
+        END_IF
+        IF (phrase[i] := "a" or "e" or "i" or "o" or "u" or "y") THEN
+            nbr_voyel := nbr_voyel+1;
+        END_IF
+        IF (phrase[i]<>" ") THEN
+            nbr_mots := nbr_mots + 1;
+        END_IF
+    END_FOR
+       WRITE("Le nombre de mots est:",nbr_mots);
+       WRITE("Le nombre de caractère est:", nbr_caract);
+       WRITE("Le nombre de voyelle est:", nbr_voyel);
+    
+
+END
