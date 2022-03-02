@@ -11,20 +11,17 @@ BEGIN
     nbr_caract:=0;
     WRITE("Ecrire une phrase:");
     READ(phrase);
-    FOR i FROM len(phrase[i]) TO max STEP step  DO
-        IF (phrase[i]:=" ") THEN
-            nbr_caract := nbr_caract + 1;
-        END_IF
-        IF (phrase[i] := "a" or "e" or "i" or "o" or "u" or "y") THEN
-            nbr_voyel := nbr_voyel+1;
-        END_IF
-        IF (phrase[i]<>" ") THEN
+    FOR i FROM 1 TO Len(phrase) STEP 1  DO
+        IF (Mid(phrase,i,1) =" ") THEN
             nbr_mots := nbr_mots + 1;
         END_IF
+        IF (Mid(phrase,i,1) = "a" OR Mid(phrase,i,1) = "e" OR Mid(phrase,i,1) ="i"  OR Mid(phrase,i,1) ="o" OR Mid(phrase,i,1) ="u" OR Mid(phrase,i,1) ="y") THEN
+            nbr_voyel := nbr_voyel+1;
+        END_IF
+        nbr_caract = Len(phrase);
     END_FOR
-       WRITE("Le nombre de mots est:",nbr_mots);
-       WRITE("Le nombre de caractère est:", nbr_caract);
-       WRITE("Le nombre de voyelle est:", nbr_voyel);
+    WRITE("Le nombre de mots est:",nbr_mots);
+    WRITE("Le nombre de caractère est:", nbr_caract);
+    WRITE("Le nombre de voyelle est:", nbr_voyel);
     
-
 END
