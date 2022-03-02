@@ -12,13 +12,13 @@ BEGIN
     WRITE("Ecrire une phrase:");
     READ(phrase);
     FOR i FROM 1 TO Len(phrase) STEP 1  DO
-        IF (Mid(phrase,i,1) =" ") THEN
+        IF (Mid(phrase,i,1) = " ") THEN
             nbr_mots := nbr_mots + 1;
         END_IF
         IF (Mid(phrase,i,1) = "a" OR Mid(phrase,i,1) = "e" OR Mid(phrase,i,1) ="i"  OR Mid(phrase,i,1) ="o" OR Mid(phrase,i,1) ="u" OR Mid(phrase,i,1) ="y") THEN
             nbr_voyel := nbr_voyel+1;
         END_IF
-        nbr_caract = Len(phrase);
+        nbr_caract := Len(phrase);
     END_FOR
     WRITE("Le nombre de mots est:",nbr_mots);
     WRITE("Le nombre de caractère est:", nbr_caract);
